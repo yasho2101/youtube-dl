@@ -6,9 +6,15 @@ from .common import InfoExtractor
 class yjcIE(InfoExtractor):
     _VALID_URL = r'(?:https?://)?(?:www\.)?yjc\.ir/fa/news/(?P<id>\w+)/*'
 
-    _TESTS = {
-        # TODO: Implement
-    }
+    _TESTS = [{
+        'url': 'https://www.yjc.ir/fa/news/7297994/دانلود قسمت نهم سریال کامیون/ پخش شده از شبکه دوم سیما در تاریخ ۹ فروردین ۹۹',
+        'info_dict': {
+            'id': '7297994',
+            'ext': 'mp4',
+            'title': 'دانلود قسمت نهم سریال کامیون/ پخش شده از شبکه دوم سیما در تاریخ ۹ فروردین ۹۹',
+        }
+
+    }]
 
     def _real_extract(self, url):
         video_id = self._match_id(url)
